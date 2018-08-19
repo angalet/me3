@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,19 +33,13 @@
 <p><input type="submit" name="OK" value="OK" /></p>
 </form>
 <?php
-//echo test;
 if (!isset($_GET['OK']) == NULL)
 {
 $city = $_GET['city'];
 echo "<pre>";
-//$city = 'moscow';
 $myuid = '72cc62f4121c0cd802c8064ada77e9d8';
 $weather = file_get_contents("https://api.openweathermap.org/data/2.5/weather?q=".$city."&appid=".$myuid."");
-//$weather = file_get_contents('weather.txt');
-//print_r($weather);
-//file_put_contents('weather.txt', $weather);
 $weather = json_decode($weather, true);
-//print_r($weather);
 echo "</pre>";
 if ($weather['name']){
 ?>
